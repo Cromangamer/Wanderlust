@@ -1,0 +1,43 @@
+<%-layout('layouts/boilerplate') -%>
+<body>
+  <% if (msg && msg.length > 0) { %>
+    <!-- the logic for this flash message is handled in CSS -->
+    <div class="alert" id="flash" role="alert">
+      <%= msg %>
+    </div>
+  <% } %>
+  <div class="Detail-container">
+    <div class="child">
+      <img
+        id="detailImg"
+        src="<%= listing.image.url %>"
+        alt="Image of <%= listing.title %>"
+      />
+    </div>
+    <div class="child1">
+      <h3><%= listing.title %></h3>
+      <p><%= listing.description %></p>
+      <p>
+        Price:
+        <span id="price"
+          >&#8377;<%= listing.price.toLocaleString("en-IN") %></span
+        >
+      </p>
+      <p>Location: <%= listing.location %></p>
+      <p>Country: <%= listing.country %></p>
+    </div>
+
+    <div class="buttons">
+      <a href="/listings/<%= listing._id %>/edit">
+        <button id="editbutton">Edit this Listing</button>
+      </a>
+      <div class="space"></div>
+      <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+        <button id="deletebutton">Delete this listing</button>
+      </form>
+    </div>
+  </div>
+  <div class="reviews-container">
+    <!-- reviews will be displayed here -->
+  </div>
+</body>

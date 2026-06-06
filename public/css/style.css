@@ -1,0 +1,487 @@
+html,
+body {
+  overflow-x: hidden; /* ✔ hides horizontal scroll bar */
+}
+body {
+  color: white;
+  background-color: rgb(0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+img {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.cart {
+  border: 1px solid white;
+  background-color: rgb(30, 30, 30);
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.cart:hover {
+  box-shadow: 0 0 10px 2px white;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+#title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#price {
+  color: rgb(16, 220, 16);
+  font-size: 16px;
+  margin-top: 5px;
+}
+#description {
+  color: grey;
+  font-size: 14px;
+}
+#flash {
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgba(4, 200, 4, 0.916);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
+  position: absolute;
+  animation: fadeOut 4s forwards;
+}
+#flashd {
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgba(200, 0, 0, 0.916);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
+  position: absolute;
+  animation: fadeOut 4s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    top: 0px;
+  }
+  10% {
+    top: 100px;
+  }
+  90% {
+    top: 100px;
+    opacity: 1;
+  }
+  100% {
+    top: -100px;
+    opacity: 0;
+    display: none;
+  }
+}
+
+#detailImg {
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.Detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.space {
+  width: 50px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.child1 {
+  width: 90%;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.304);
+  border-radius: 10px;
+  background-color: rgb(30, 30, 30);
+}
+
+#deletebutton {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgba(176, 0, 0, 0.834);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+#deletebutton:hover {
+  transform: scale(1.05);
+  background-color: rgb(255, 24, 24);
+}
+
+#editbutton {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 255, 0.834);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+  margin-right: 10px;
+}
+#editbutton:hover {
+  transform: scale(1.05);
+  background-color: rgb(24, 24, 255);
+}
+
+#addbutton {
+  width: 150px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgba(28, 255, 3, 0.452);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+  margin-left: 100px;
+}
+#addbutton:hover {
+  transform: scale(1.05);
+  background-color: rgba(28, 255, 3, 0.834);
+}
+
+.Edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+}
+#edit-title {
+  width: 80vw;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 10px 10px 30px 10px;
+  background-color: rgb(30, 30, 30);
+  color: white;
+}
+
+#edit-form {
+  width: 80vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px 10px 10px 50px;
+  margin: 10px 10px 30px 10px;
+  background-color: rgb(30, 30, 30);
+  color: white;
+}
+
+input,
+textarea {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: 1px solid grey;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  width: auto;
+  margin-top: 10px;
+}
+textarea {
+  width: 70vw;
+  height: 100px;
+  resize: none;
+}
+
+#edit-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#errorbutton {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgba(231, 171, 140, 0.834);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+#errorbutton:hover {
+  transform: scale(1.05);
+  background-color: rgb(255, 140, 87);
+}
+
+#logo {
+  font-size: 40px;
+  color: white;
+  position: sticky;
+  cursor: none;
+}
+
+header {
+  display: flex;
+  width: 99%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid white;
+  position: sticky;
+  top: 0; /* 👈 required */
+  background: black; /* 👈 sticky needs a background so content doesn’t show through */
+  z-index: 1000; /* 👈 keeps it above other content */
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.headercontainer {
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.autho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#signup {
+  padding: 8px 18px;
+  border: 1px solid #818181;
+  text-decoration: none;
+  color: #4f4f4f;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+#signup:hover {
+  background: #333;
+  color: white;
+}
+
+#signin-btn {
+  position: relative;
+  padding: 10px 22px;
+  border: 1px solid;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #000000, #434343);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Shine effect */
+#signin-btn::after {
+  content: "";
+  position: absolute;
+  height: 155px;
+  width: 50px;
+  background: #fff;
+  opacity: 0.2;
+  top: -50px;
+  left: -75px;
+  transform: rotate(35deg);
+  animation: shine 5s infinite;
+}
+
+#signin-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Keyframes animation */
+@keyframes shine {
+  0% {
+    left: -75px;
+  }
+  20% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+.user-icon {
+  height: 40px;
+  width: auto;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+#create-listing-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgba(161, 161, 161, 0.452);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+#create-listing-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(241, 241, 241, 0.834);
+}
+
+.New-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+/* Signup page container */
+.singuprow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* Signup card */
+.singupcol {
+  width: 400px;
+  background-color: rgb(30, 30, 30);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  transition: 0.4s;
+}
+
+.singupcol:hover {
+  box-shadow: 0 0 10px 2px white;
+  transform: scale(1.03);
+}
+
+/* Title */
+.singupcol h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: white;
+}
+
+/* Form group */
+.singupform-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.singupform-group label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: grey;
+}
+
+/* Inputs */
+.singupform-group input {
+  background-color: black;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.singupform-group input:focus {
+  border-color: white;
+  box-shadow: 0 0 5px white;
+}
+
+/* Signup button */
+.signupbtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: rgba(28, 255, 3, 0.452);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.4s;
+  margin-top: 10px;
+}
+
+.signupbtn:hover {
+  background-color: rgba(28, 255, 3, 0.834);
+  transform: scale(1.05);
+}

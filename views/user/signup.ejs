@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') -%>
+<% if (error.length) { %>
+    <!-- the logic for this flash message is handled in CSS -->
+    <div class="alert" id="flashd" role="alert">
+      <%= error[0] %>
+    </div>
+  <% } %>
+
+<div class="singuprow">
+    <div class="singupcol">
+        <h1>Sign Up</h1>
+        <form action="/user/signup" method="POST">
+        <div class="singupform-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="singupform-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="singupform-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="signupbtn">Sign Up</button>
+        <br><br>
+        <span style="margin-left: 130px;"><a href="/user/signin" style ="text-decoration: underline;">Already have a Account!</a></span>
+        </form>
+    </div>
+</div>

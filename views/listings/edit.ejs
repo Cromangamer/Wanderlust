@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+  <div class="Edit-container">
+    <h3 id="edit-title">Edit your Listing</h3>
+    <form id="edit-form" method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+      <div id="edit-div">
+        <label for="title">Title:</label>
+        <input name="listing[title]" value="<%= listing.title %>" type="text" />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="description">Description:</label>
+        <textarea name="listing[description]"><%= listing.description %></textarea>
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="image">Image URL:</label>
+        <input name="listing[image]" value="<%= listing.image %>" type="text" />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="price">Price:</label>
+        <input name="listing[price]" value="<%= listing.price %>" type="number" />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="country">Country:</label>
+        <input name="listing[country]" value="<%= listing.country %>" type="text" />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="location">Location:</label>
+        <input
+          name="listing[location]"
+          value="<%= listing.location %>"
+          type="text"
+        />
+      </div>
+      <br/> <br/>
+      <div id="edit-div">
+        <label for="owner">Owner: <%= currentUser.username %></label>
+        <input name="listing[owner]" value="<%= owner  %>" type="hidden"  />
+      </div>
+      <br /><br />
+      <button id="editbutton">Edit</button>
+    </form>
+  </div>
+</body>
+  

@@ -1,0 +1,33 @@
+body {
+    color:white;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.834);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background-color: white;
+}

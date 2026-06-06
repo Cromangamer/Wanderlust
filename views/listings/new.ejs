@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+  <div class="New-container">
+    <h3 id="edit-title">Create a New Listing</h3>
+    <form 
+      method="POST"
+      id="edit-form"
+      action="/listings"
+      novalidate
+      encType = "multipart/form-data" 
+      >
+      <!-- if we want form send multiple file like images and row data both then we use encType of form peramiter -->
+      <div id="edit-div">
+        <label for="title">Title:</label>
+        <input
+          name="listing[title]"
+          placeholder="Enter your Title"
+          type="text"
+        />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="description">Description:</label>
+        <textarea
+          name="listing[description]"
+          placeholder="Enter your Description"
+        ></textarea>
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="image">Image URL:</label>
+        <input
+          name="listing[image]"
+          placeholder="Upload Listing Image"
+          type="file"
+        />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="price">Price:</label>
+        <input
+          name="listing[price]"
+          placeholder="Enter your Price"
+          type="number"
+        />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="country">Country:</label>
+        <input
+          name="listing[country]"
+          placeholder="Enter Your Country Name"
+          type="text"
+        />
+      </div>
+      <br /><br />
+      <div id="edit-div">
+        <label for="location">Location:</label>
+        <input
+          name="listing[location]"
+          placeholder="Enter Your location"
+          type="text"
+        />
+      </div>
+      <br />
+      <br />
+      
+      <button id="addbutton">Add</button>
+    </form>
+  </div>
+  <script>
+    window.onload = function () {
+      let create = document.querySelector("#create-listing-button");
+      create.style.display = "none";
+    };
+  </script>
+</body>

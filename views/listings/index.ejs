@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+  <% if (msg && msg.length > 0) { %>
+    <!-- the logic for this flash message is handled in CSS -->
+    <div class="alert" id="flash" role="alert">
+      <%= msg %>
+    </div>
+  <% } %>
+  <div class="container">
+    <% for(let listing of allListings) { %>
+    <a href="/listings/<%= listing._id %>">
+      <div class="cart">
+        <img src="<%= listing.image.url %>" alt="Image of <%= listing.title %>" />
+        <h4 id="title"><%= listing.title %></h4>
+        <b id="price">$<%= listing.price %></b>
+        <p id="description"><%= listing.description %></p>
+      </div>
+    </a>
+
+    <% } %>
+  </div>
+</body>
